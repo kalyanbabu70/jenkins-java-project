@@ -1,5 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
     <modelVersion>4.0.0</modelVersion>
     <groupId>in.RAHAM</groupId>
     <artifactId>NETFLIX</artifactId>
@@ -10,8 +11,8 @@
 
     <properties>
         <docker.image.prefix>kammana</docker.image.prefix>
-        <java.version>1.8</java.version> <!-- Changed to Java 1.8 -->
-    </properties>    
+        <java.version>1.8</java.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -41,26 +42,31 @@
     </distributionManagement>
 
     <pluginRepositories>
-        <pluginRepository>    
+        <pluginRepository>
             <id>maven1</id>
             <name>Maven.org</name>
             <url>http://repo1.maven.org/maven2</url>
         </pluginRepository>
     </pluginRepositories>
 
-    <!-- Add the build section to specify the Java version for compiling -->
     <build>
         <plugins>
+            <!-- Specify the maven-war-plugin version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version> <!-- Updated version -->
+            </plugin>
+            <!-- Specify the maven-compiler-plugin version -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.8.1</version> <!-- Updated version -->
                 <configuration>
-                    <source>${java.version}</source> <!-- Using Java version from properties -->
-                    <target>${java.version}</target> <!-- Using Java version from properties -->
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
